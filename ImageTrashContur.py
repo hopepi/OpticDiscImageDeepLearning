@@ -31,7 +31,7 @@ class OpticDiscTrash:
 
                 x, y, w, h = cv2.boundingRect(approx)
 
-                padding = 35  # Padding ekle
+                padding = 100  # Padding ekle
                 optic_disc_region = roi[
                                     max(y - padding, 0):min(y + h + padding, roi.shape[0]),
                                     max(x - padding, 0):min(x + w + padding, roi.shape[1])]

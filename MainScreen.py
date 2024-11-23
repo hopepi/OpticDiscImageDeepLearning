@@ -163,9 +163,12 @@ def predict_all_model():
         model_predictor_googleNet = ImageModelPredictor(model_path_googleNet)
         prediction_googleNet = model_predictor_googleNet.get_prediction(current_image)
 
-        messagebox.showinfo("Tahminler", f"Tahmin sonucu GoogleNet : {prediction_googleNet}")
-        messagebox.showinfo("Tahminler", f"Tahmin sonucu ResNet101 : {prediction_resNet101}")
-        messagebox.showinfo("Tahminler", f"Tahmin sonucu MobileNetV2 : {prediction_mobileNetV2}")
+        messagebox.showinfo("Tahminler", f"Tahmin sonucu GoogleNet Glaucoma İhtimali : {prediction_googleNet[0][0]}\n"
+                                         f"Tahmin sonucu GoogleNet Glaucoma olmama İhtimali : {prediction_googleNet[0][1]}")
+        messagebox.showinfo("Tahminler", f"Tahmin sonucu ResNet101  Glaucoma İhtimali : {prediction_resNet101[0][0]}\n"
+                                         f"Tahmin sonucu ResNet101 Glaucoma olmama İhtimali : {prediction_resNet101[0][1]}")
+        messagebox.showinfo("Tahminler", f"Tahmin sonucu MobileNetV2  Glaucoma İhtimali : {prediction_mobileNetV2[0][0]}\n"
+                                         f"Tahmin sonucu MobileNetV2 Glaucoma olmama İhtimali : {prediction_mobileNetV2[0][1]}")
     else:
         messagebox.showwarning("Uyarı", "Resim bulunamadı.")
 
